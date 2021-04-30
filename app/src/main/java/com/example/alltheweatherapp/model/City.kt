@@ -28,7 +28,7 @@ data class City(
         @Expose
         val elevation: Int,
         @Expose
-        val latitude: Long,
+        val latitude: Double,
         @Expose
-        val longitude: Long
+        val longitude: Double
 )

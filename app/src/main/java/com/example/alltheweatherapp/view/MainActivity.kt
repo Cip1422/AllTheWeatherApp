@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity(), SearchCityFragment.SelectedCity {
     private fun initViews(){
         binding.weeklyForecast.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
         binding.forecast.layoutManager = LinearLayoutManager(this)
-        setSupportActionBar(binding.mainToolbar.toolbar)
+//        setSupportActionBar(binding.mainToolbar.toolbar)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_icon_search)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity(), SearchCityFragment.SelectedCity {
         binding.mainToolbar.hometoolbarcity.textDate.text = SimpleDateFormat("E MM/dd/yy hh:mm a", Locale.getDefault()).format(Date())
         binding.mainToolbar.hometoolbarcity.textDegrees.text = "${data.weather.days[0].low.toString()}º"
         binding.weeklyForecast.adapter = weeklyAdapter
-        Picasso.get().load(data.city.imageURLs.androidImageURL.xhdpiImageURL).into(binding.mainToolbar.currentCity)
+        Picasso.get().load(data?.city?.imageURLs?.androidImageURL?.xhdpiImageURL).into(binding.mainToolbar.currentCity)
     }
 
     private fun createForecastAdapter(data: Day) {
